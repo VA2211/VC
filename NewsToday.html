@@ -647,8 +647,7 @@ function parseDate(str){
 
 async function fetchRSS(url){
   try{
-    const bust=Date.now();
-    const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&_=${bust}`);
+    const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
     const data=await res.json();
     return (data.items||[]).map(i=>{
       const src=extractSource(i.title,i.link);
@@ -664,7 +663,7 @@ async function fetchNews(q=""){
   if(q){
     try{
       const url=`https://news.google.com/rss/search?q=${encodeURIComponent(q)}`;
-      const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&_=${Date.now()}`);
+      const res=await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
       const data=await res.json();
       if(data.items){
         all=all.concat(data.items.map(i=>{
