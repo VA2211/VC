@@ -609,13 +609,13 @@ document.getElementById("timeFilter").onchange=()=>load(document.getElementById(
 
 function getTopic(text){
   text=text.toLowerCase();
-  if(text.includes("india")) return "India";
+  if(text.includes("india")||text.includes("bharat")) return "India";
   if(text.includes("stock")||text.includes("market")||text.includes("shares")) return "Stocks";
-  if(text.includes("oil")||text.includes("gold")||text.includes("commodity")) return "Commodities";
-  if(text.includes("finance")||text.includes("bank")||text.includes("inflation")) return "Finance";
-  if(text.includes("tech")||text.includes("ai")||text.includes("software")) return "Tech";
-  if(text.includes("business")||text.includes("company")) return "Business";
-  if(text.includes("war")||text.includes("election")||text.includes("government")) return "Geopolitics";
+  if(text.includes("oil")||text.includes("gold")||text.includes("commodity")||text.includes("silver")||text.includes("copper")||text.includes("futures")||text.includes("spot")||text.includes("coal")||text.includes("uranium")||text.includes("gas")||text.includes("lithium")) return "Commodities";
+  if(text.includes("finance")||text.includes("bank")||text.includes("risk")||text.includes("inflation")||text.includes("economy")||text.includes("interest")||text.includes("loan")||text.includes("insurance")||text.includes("stocks")||text.includes("market")||text.includes("tax")) return "Finance";
+  if(text.includes("tech")||text.includes("ai")||text.includes("software")||text.includes("data")||text.includes("cloud")||text.includes("crypto")||text.includes("digital")||text.includes("quantum")) return "Tech";
+  if(text.includes("business")||text.includes("company")||text.includes("corporate")||text.includes("startup")||text.includes("profit")||text.includes("growth")||text.includes("invest")||text.includes("ipo")) return "Business";
+  if(text.includes("war")||text.includes("election")||text.includes("trade")||text.includes("nuclear")||text.includes("energy")||text.includes("resources")||text.includes("sanctions")|text.includes("alliances")||text.includes("diplomacy")|| text.includes("conflict")||text.includes("summit")||text.includes("government")) return "Geopolitics";
   return "World";
 }
 
